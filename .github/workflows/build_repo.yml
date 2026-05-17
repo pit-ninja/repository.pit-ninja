@@ -33,10 +33,15 @@ jobs:
           curl -L -o temp.zip https://github.com/$MODULE/archive/refs/tags/$TAG.zip
           unzip -q temp.zip -d temp_build
           
-          # Fix the internal folder structure (Kodi requires the root folder inside the zip to match the addon ID exactly)
+          # Fix the internal folder structure
           cd temp_build
           EXTRACTED_DIR=$(ls -d */)
           mv "$EXTRACTED_DIR" "$SKIN_NAME"
+          
+          # --- THE FIX: Copy metadata for the Python generator ---
+          cp "$SKIN_NAME/addon.xml" "../$SKIN_NAME/"
+          cp "$SKIN_NAME/icon.png" "../$SKIN_NAME/" 2>/dev/null || true
+          cp "$SKIN_NAME/fanart.jpg" "../$SKIN_NAME/" 2>/dev/null || true
           
           # Zip it back up and move it to the final directory
           zip -rq "../$SKIN_NAME/$SKIN_NAME-${TAG#v}.zip" "$SKIN_NAME"
