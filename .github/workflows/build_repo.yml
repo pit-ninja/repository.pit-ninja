@@ -1,0 +1,57 @@
+name: Build Repository
+on:
+  repository_dispatch:
+    types: [update]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Download and Package Kodi Addon
+        run: |
+          # Extract variables from the incoming payload
+          MODULE="${{ github.event.client_payload.module }}"
+          TAG="${{ github.event.client_payload.tag }}"
+          SKIN_NAME=$(basename $MODULE)
+          
+          echo "Processing $SKIN_NAME version $TAG..."
+          
+          # Create destination directory in the repo
+          mkdir -p $SKIN_NAME
+          
+          # Download the source code zip from the release tag
+          mkdir -p temp_build
+          curl -L -o temp.zip https://github.com/$MODULE/archive/refs/tags/$TAG.zip
+          unzip -q temp.zip -d temp_build
+          
+          # Fix the internal folder structure (Kodi requires the root folder inside the zip to match the addon ID exactly)
+          cd temp_build
+          EXTRACTED_DIR=$(ls -d */)
+          mv "$EXTRACTED_DIR" "$SKIN_NAME"
+          
+          # Zip it back up and move it to the final directory
+          zip -rq "../$SKIN_NAME/$SKIN_NAME-${TAG#v}.zip" "$SKIN_NAME"
+          cd ..
+          
+          # Cleanup temp files
+          rm -rf temp_build temp.zip
+
+      - name: Generate addons.xml Index
+        run: python3 _repo_generator.py
+
+      - name: Commit and Push Update
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Auto-update: $SKIN_NAME $TAG" || echo "No changes to commit"
+          git push
