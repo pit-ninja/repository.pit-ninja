@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<addons>
+  <addon id="repository.pit-ninja" name="PitNinja" version="1.0.0" provider-name="PitNinja">
+    <extension point="xbmc.addon.repository" name="PitNinja">
+      <dir>
+        <info compressed="false">https://pit-ninja.github.io/repository.pit-ninja/addons.xml</info>
+        <checksum>https://pit-ninja.github.io/repository.pit-ninja/addons.xml.md5</checksum>
+        <datadir zip="true">https://pit-ninja.github.io/repository.pit-ninja/</datadir>
+      </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>PitNinja</summary>
+      <description>Hosting a custom AF3 fork for p3i with more to come.</description>
+      <platform>all</platform>
+    </extension>
+  </addon>
+</addons>
