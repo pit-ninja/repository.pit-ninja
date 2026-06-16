@@ -1,5 +1,59 @@
 <?xml version='1.0' encoding='utf-8'?>
 <addons>
+  <addon id="repository.pit-ninja" name="PitNinja" version="1.0.0" provider-name="PitNinja">
+    <extension point="xbmc.addon.repository" name="PitNinja">
+      <dir>
+        <info compressed="false">https://pit-ninja.github.io/repository.pit-ninja/addons.xml</info>
+        <checksum>https://pit-ninja.github.io/repository.pit-ninja/addons.xml.md5</checksum>
+        <datadir zip="true">https://pit-ninja.github.io/repository.pit-ninja/</datadir>
+      </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>PitNinja</summary>
+      <description>Hosting a custom AF3 fork for p3i with more to come.</description>
+      <platform>all</platform>
+    </extension>
+  </addon>
+  <addon id="screensaver.atv4" name="Aerial" version="10.3.0.3" provider-name="pit-ninja">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+    </requires>
+    <extension point="xbmc.ui.screensaver" library="entrypointscreensaver.py" />
+    <extension point="xbmc.python.script" library="entrypointscript.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" />
+    <extension point="xbmc.addon.metadata">
+      <platform>all</platform>
+      <license>GPL-2.0-only</license>
+      <source>https://github.com/enen92/screensaver.atv4</source>
+      <forum>https://forum.kodi.tv/showthread.php?tid=246655</forum>
+      <summary lang="en_GB">Apple TV Screensavers in Kodi</summary>
+      <summary lang="es_ES">Protector de pantalla Apple TV para Kodi</summary>
+      <description lang="en_GB">This screensaver addon provides Apple TV aerial screensavers in Kodi</description>
+      <description lang="es_ES">Este complemento habilita el protector de pantalla Aerial de Apple TV para Kodi</description>
+      <news>v10.3.0.3 (2026-06-15)
+			- Bumped major version to override upstream Kodi repository, keeping Kodi repo version as suffix
+			- Transitioned to native Kodi C++ playlist engine
+			- Added video title (sourced from Apple's JSON) and date/time overlay (with Arctic Fuse 3 font styling)
+			- Added toggle in the add-on settings to enable/disable 'Show information' overlay (default: disabled)
+			- Added explicit OS-level 'System Power Off' option to DPMS
+			v3.0.3  (2022-01-01)
+			- New scenes added (Patagonia, Yosemite, Grand Canyon, Iceland, Scotland)
+			- Updated Apple resources.tar entries.json URL
+			- Location All is now sorted before any of the other locations
+			- Fixed bug that was preventing playback or download when HEVC was disabled
+		</news>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
+        <screenshot>resources/screenshots/screenshot-02.jpg</screenshot>
+        <screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
+        <screenshot>resources/screenshots/screenshot-04.jpg</screenshot>
+      </assets>
+    </extension>
+  </addon>
   <addon id="skin.arctic.fuse.3" name="Arctic Fuse 3 (p3i)" provider-name="jurialmunkey, jamal2362, swmarks" version="58.3.2.9">
     <requires>
       <import addon="xbmc.gui" version="5.17.0" />
@@ -39,20 +93,6 @@
         <icon>icon.png</icon>
         <fanart>fanart.jpg</fanart>
       </assets>
-    </extension>
-  </addon>
-  <addon id="repository.pit-ninja" name="PitNinja" version="1.0.0" provider-name="PitNinja">
-    <extension point="xbmc.addon.repository" name="PitNinja">
-      <dir>
-        <info compressed="false">https://pit-ninja.github.io/repository.pit-ninja/addons.xml</info>
-        <checksum>https://pit-ninja.github.io/repository.pit-ninja/addons.xml.md5</checksum>
-        <datadir zip="true">https://pit-ninja.github.io/repository.pit-ninja/</datadir>
-      </dir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary>PitNinja</summary>
-      <description>Hosting a custom AF3 fork for p3i with more to come.</description>
-      <platform>all</platform>
     </extension>
   </addon>
 </addons>
