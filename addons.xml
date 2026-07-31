@@ -1,48 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <addons>
-  <addon id="screensaver.atv4" name="Aerial" version="15.3.0.3" provider-name="pit-ninja">
-    <requires>
-      <import addon="xbmc.python" version="3.0.0" />
-    </requires>
-    <extension point="xbmc.ui.screensaver" library="entrypointscreensaver.py" />
-    <extension point="xbmc.python.script" library="entrypointscript.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.service" library="service.py" />
-    <extension point="xbmc.addon.metadata">
-      <platform>all</platform>
-      <license>GPL-2.0-only</license>
-      <source>https://github.com/enen92/screensaver.atv4</source>
-      <forum>https://forum.kodi.tv/showthread.php?tid=246655</forum>
-      <summary lang="en_GB">Apple TV Screensavers in Kodi</summary>
-      <summary lang="es_ES">Protector de pantalla Apple TV para Kodi</summary>
-      <description lang="en_GB">This screensaver addon provides Apple TV aerial screensavers in Kodi</description>
-      <description lang="es_ES">Este complemento habilita el protector de pantalla Aerial de Apple TV para Kodi</description>
-      <news>v15.3.0.3 (2026-07-18)
-- Remove legacy loading screen assets and fallback Python logic to prevent crashes with custom skin layouts
-- Finalize layout integration for Arctic Fuse 3 override compatibility
-
-v14.3.0.3 (2026-07-18)
-- Complete visual overhaul of XML layouts to natively support Kodi's default Estuary skin
-
-v13.3.0.3 (2026-07-18)
-- Implement location string localization via Apple's TVIdleScreenStrings bundle
-- Add support for dynamically updating Point of Interest (POI) waypoints during video playback
-- Implement smart line-wrapping logic to automatically break extremely long location strings across two lines
-- Rearrange OSD text layout and drop the date field for a cleaner visual aesthetic
-- Update payload URL
-</news>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-        <screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
-        <screenshot>resources/screenshots/screenshot-02.jpg</screenshot>
-        <screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
-        <screenshot>resources/screenshots/screenshot-04.jpg</screenshot>
-      </assets>
-    </extension>
-  </addon>
-  <addon id="skin.arctic.fuse.3" name="Arctic Fuse 3 (p3i)" provider-name="jurialmunkey, jamal2362, swmarks" version="62.3.2.14">
+  <addon id="skin.arctic.fuse.3" name="Arctic Fuse 3 (p3i)" provider-name="jurialmunkey, jamal2362, swmarks" version="63.3.2.15">
     <requires>
       <import addon="xbmc.gui" version="5.17.0" />
       <import addon="script.skinvariables" version="2.2.2" />
@@ -95,6 +53,48 @@ v13.3.0.3 (2026-07-18)
       <summary>PitNinja</summary>
       <description>Hosting a custom AF3 fork for p3i with more to come.</description>
       <platform>all</platform>
+    </extension>
+  </addon>
+  <addon id="screensaver.atv4" name="Aerial" version="15.3.0.3" provider-name="pit-ninja">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+    </requires>
+    <extension point="xbmc.ui.screensaver" library="entrypointscreensaver.py" />
+    <extension point="xbmc.python.script" library="entrypointscript.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.service" library="service.py" />
+    <extension point="xbmc.addon.metadata">
+      <platform>all</platform>
+      <license>GPL-2.0-only</license>
+      <source>https://github.com/enen92/screensaver.atv4</source>
+      <forum>https://forum.kodi.tv/showthread.php?tid=246655</forum>
+      <summary lang="en_GB">Apple TV Screensavers in Kodi</summary>
+      <summary lang="es_ES">Protector de pantalla Apple TV para Kodi</summary>
+      <description lang="en_GB">This screensaver addon provides Apple TV aerial screensavers in Kodi</description>
+      <description lang="es_ES">Este complemento habilita el protector de pantalla Aerial de Apple TV para Kodi</description>
+      <news>v15.3.0.3 (2026-07-18)
+- Remove legacy loading screen assets and fallback Python logic to prevent crashes with custom skin layouts
+- Finalize layout integration for Arctic Fuse 3 override compatibility
+
+v14.3.0.3 (2026-07-18)
+- Complete visual overhaul of XML layouts to natively support Kodi's default Estuary skin
+
+v13.3.0.3 (2026-07-18)
+- Implement location string localization via Apple's TVIdleScreenStrings bundle
+- Add support for dynamically updating Point of Interest (POI) waypoints during video playback
+- Implement smart line-wrapping logic to automatically break extremely long location strings across two lines
+- Rearrange OSD text layout and drop the date field for a cleaner visual aesthetic
+- Update payload URL
+</news>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshots/screenshot-01.jpg</screenshot>
+        <screenshot>resources/screenshots/screenshot-02.jpg</screenshot>
+        <screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
+        <screenshot>resources/screenshots/screenshot-04.jpg</screenshot>
+      </assets>
     </extension>
   </addon>
 </addons>
