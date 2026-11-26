@@ -1,28 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <addons>
-  <addon id="repository.pit-ninja" name="PitNinja" version="1.0.0" provider-name="PitNinja">
-    <extension point="xbmc.addon.repository" name="PitNinja">
-      <dir>
-        <info compressed="false">https://pit-ninja.github.io/repository.pit-ninja/addons.xml</info>
-        <checksum>https://pit-ninja.github.io/repository.pit-ninja/addons.xml.md5</checksum>
-        <datadir zip="true">https://pit-ninja.github.io/repository.pit-ninja/</datadir>
-      </dir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary>PitNinja</summary>
-      <description>Hosting a custom AF3 fork for p3i with more to come.</description>
-      <platform>all</platform>
-    </extension>
-  </addon>
-  <addon id="skin.arctic.fuse.3" name="Arctic Fuse 3 (p3i)" provider-name="jurialmunkey, jamal2362, swmarks" version="64.3.4.20">
+  <addon id="skin.arctic.fuse.3" name="Arctic Fuse 3 (p3i)" provider-name="jurialmunkey, jamal2362, swmarks" version="64.3.5.10">
     <requires>
       <import addon="xbmc.gui" version="5.17.0" />
-      <import addon="script.skinvariables" version="2.2.15" />
+      <import addon="script.skinvariables" version="2.3.12" />
       <import addon="script.texturemaker" version="0.2.9" />
-      <import addon="plugin.video.themoviedb.helper" version="6.19.2" />
+      <import addon="plugin.video.themoviedb.helper" version="6.22.2" />
       <import addon="resource.images.weathericons.white" version="0.0.1" />
-      <import addon="resource.images.arctic.splash" version="1.1.0" />
-      <import addon="resource.images.arctic.weather" version="1.0.4" />
+      <import addon="resource.images.arctic.splash" version="1.1.1" />
       <import addon="resource.images.studios.coloured" version="0.0.1" />
       <import addon="resource.font.robotocjksc" version="0.0.3" />
     </requires>
@@ -97,6 +82,20 @@ v13.3.0.3 (2026-07-18)
         <screenshot>resources/screenshots/screenshot-03.jpg</screenshot>
         <screenshot>resources/screenshots/screenshot-04.jpg</screenshot>
       </assets>
+    </extension>
+  </addon>
+  <addon id="repository.pit-ninja" name="PitNinja" version="1.0.0" provider-name="PitNinja">
+    <extension point="xbmc.addon.repository" name="PitNinja">
+      <dir>
+        <info compressed="false">https://pit-ninja.github.io/repository.pit-ninja/addons.xml</info>
+        <checksum>https://pit-ninja.github.io/repository.pit-ninja/addons.xml.md5</checksum>
+        <datadir zip="true">https://pit-ninja.github.io/repository.pit-ninja/</datadir>
+      </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>PitNinja</summary>
+      <description>Hosting a custom AF3 fork for p3i with more to come.</description>
+      <platform>all</platform>
     </extension>
   </addon>
 </addons>
